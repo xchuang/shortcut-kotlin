@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @OnClick(R.id.create_dynamic_shortcut)
-    internal fun createDynamicShortcut() {
+    fun createDynamicShortcut() {
         val dynamicShortcuts = shortcutManager.dynamicShortcuts
         val number = shortcutManager.dynamicShortcuts.size + 1
         val label = websiteEditText.text.toString()
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @OnClick(R.id.set_rank_button)
-    internal fun setRank() {
+    fun setRank() {
         val dynamicShortcuts = arrayListOf<ShortcutInfo>()
         val shortcutInfo1 = ShortcutInfo.Builder(this, SHORTCUT_ID_1).setRank(1).build()
         val shortcutInfo2 = ShortcutInfo.Builder(this, SHORTCUT_ID_2).setRank(2).build()
@@ -70,7 +70,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @OnClick(R.id.create_pinned_shortcut_button)
-    internal fun createPinnedShortcut() {
+    fun createPinnedShortcut() {
         if (shortcutManager.isRequestPinShortcutSupported) {
             val pinnedShortcutInfo = ShortcutInfo.Builder(context, SHORTCUT_ID_1).build()
             shortcutManager.requestPinShortcut(pinnedShortcutInfo, null)
@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @OnClick(R.id.remove_button)
-    internal fun removeShorcut() {
+    fun removeShorcut() {
         val shortcutIds = Collections.singletonList(shortcutManager.dynamicShortcuts[0].id)
         //disable pinned shortcuts, showing user a custom error message when they try to select the disabled shortcuts
         shortcutManager.disableShortcuts(shortcutIds, getString(R.string.disable_pinned_shortcuts_error_message))

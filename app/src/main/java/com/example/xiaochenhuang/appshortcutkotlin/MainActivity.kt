@@ -16,13 +16,13 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
-    var URL_PREFIX = "https://www."
-    var URL_SUFFIX = ".com"
-    var SHORTCUT_ID_1 = "Dynamic Shortcut 1"
-    var SHORTCUT_ID_2 = "Dynamic Shortcut 2"
+    private val URL_PREFIX = "https://www."
+    private val URL_SUFFIX = ".com"
+    private val SHORTCUT_ID_1 = "Dynamic Shortcut 1"
+    private val SHORTCUT_ID_2 = "Dynamic Shortcut 2"
 
-    lateinit var shortcutManager: ShortcutManager
-    lateinit var context: Context
+    private lateinit var shortcutManager: ShortcutManager
+    private lateinit var context: Context
 
     @BindView(R.id.add_website_edit_text)
     lateinit var websiteEditText: EditText
@@ -39,12 +39,12 @@ class MainActivity : AppCompatActivity() {
 
     @OnClick(R.id.create_dynamic_shortcut)
     internal fun createDynamicShortcut() {
-        var dynamicShortcuts = shortcutManager.dynamicShortcuts
-        var number = shortcutManager.dynamicShortcuts.size + 1
-        var label = websiteEditText.text.toString()
-        var url = URL_PREFIX + label + URL_SUFFIX
+        val dynamicShortcuts = shortcutManager.dynamicShortcuts
+        val number = shortcutManager.dynamicShortcuts.size + 1
+        val label = websiteEditText.text.toString()
+        val url = URL_PREFIX + label + URL_SUFFIX
 
-        var shortcutInfo = ShortcutInfo.Builder(this, getString(R.string.dynamic_shortcut_id, number))
+        val shortcutInfo = ShortcutInfo.Builder(this, getString(R.string.dynamic_shortcut_id, number))
                 .setIcon(Icon.createWithResource(context, R.mipmap.ic_launcher))
                 .setShortLabel(label)
                 .setLongLabel(label)
@@ -55,15 +55,15 @@ class MainActivity : AppCompatActivity() {
             shortcutManager.addDynamicShortcuts(Collections.singletonList(shortcutInfo))
         } else {
             dynamicShortcuts.add(shortcutInfo)
-            shortcutManager.setDynamicShortcuts(Collections.singletonList(shortcutInfo))
+            shortcutManager.dynamicShortcuts = Collections.singletonList(shortcutInfo)
         }
     }
 
     @OnClick(R.id.set_rank_button)
     internal fun setRank() {
-        var dynamicShortcuts = arrayListOf<ShortcutInfo>()
-        var shortcutInfo1 = ShortcutInfo.Builder(this, SHORTCUT_ID_1).setRank(1).build()
-        var shortcutInfo2 = ShortcutInfo.Builder(this, SHORTCUT_ID_2).setRank(2).build()
+        val dynamicShortcuts = arrayListOf<ShortcutInfo>()
+        val shortcutInfo1 = ShortcutInfo.Builder(this, SHORTCUT_ID_1).setRank(1).build()
+        val shortcutInfo2 = ShortcutInfo.Builder(this, SHORTCUT_ID_2).setRank(2).build()
         dynamicShortcuts.add(shortcutInfo1)
         dynamicShortcuts.add(shortcutInfo2)
         shortcutManager.updateShortcuts(dynamicShortcuts)
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
     @OnClick(R.id.create_pinned_shortcut_button)
     internal fun createPinnedShortcut() {
         if (shortcutManager.isRequestPinShortcutSupported) {
-            var pinnedShortcutInfo = ShortcutInfo.Builder(context, SHORTCUT_ID_1).build()
+            val pinnedShortcutInfo = ShortcutInfo.Builder(context, SHORTCUT_ID_1).build()
             shortcutManager.requestPinShortcut(pinnedShortcutInfo, null)
 
             //Create the PendingIntent object only if your app needs to be notified
@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity() {
 
     @OnClick(R.id.remove_button)
     internal fun removeShorcut() {
-        var shortcutIds = Collections.singletonList(shortcutManager.dynamicShortcuts.get(0).id)
+        val shortcutIds = Collections.singletonList(shortcutManager.dynamicShortcuts[0].id)
         //disable pinned shortcuts, showing user a custom error message when they try to select the disabled shortcuts
         shortcutManager.disableShortcuts(shortcutIds, getString(R.string.disable_pinned_shortcuts_error_message))
         shortcutManager.removeDynamicShortcuts(shortcutIds)

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutId="static_shortcut_1"
+        android:shortcutLongLabel="@string/static_shortcut_1"
+        android:shortcutShortLabel="@string/static_shortcut_1"
+        >
+        <intent
+            android:action="com.example.xiaochenhuang.appshortcutkotlin.STATIC_SHORTCUT"
+            android:targetClass="com.example.xiaochenhuang.appshortcutkotlin.StaticShortcutActivity"
+            android:targetPackage="com.example.xiaochenhuang.appshortcutkotlin"
+            />
+    </shortcut>
+
+    <shortcut
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutId="static_shortcut_2"
+        android:shortcutLongLabel="@string/static_shortcut_2"
+        android:shortcutShortLabel="@string/static_shortcut_2"
+        >
+        <intent
+            android:action="android.intent.action.MAIN"
+            android:targetClass="com.example.xiaochenhuang.appshortcutkotlin.MainActivity"
+            android:targetPackage="com.example.xiaochenhuang.appshortcutkotlin"
+            />
+
+        <intent
+            android:action="com.ddmeng.hellonougat.action.STATIC_SHORTCUT_2"
+            android:targetClass="com.example.xiaochenhuang.appshortcutkotlin.StaticShortcutActivity"
+            android:targetPackage="com.example.xiaochenhuang.appshortcutkotlin"
+            />
+    </shortcut>
+</shortcuts>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.xiaochenhuang.appshortcutkotlin.MainActivity"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="120dp"
+        android:text="add website"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/add_website_edit_text"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            />
+
+        <Button
+            android:id="@+id/create_dynamic_shortcut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/create_dynamic_shortcut_button"
+            />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/set_rank_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:text="@string/set_rand_button"
+        />
+
+    <Button
+        android:id="@+id/create_pinned_shortcut_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:text="@string/create_pinned_shortcut_button"
+        />
+
+    <Button
+        android:id="@+id/remove_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/remove_button"
+        />
+
+</LinearLayout>

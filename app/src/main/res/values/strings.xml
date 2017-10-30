@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ShortcutsDemo</string>
+
+    <string name="static_shortcut_1">Static Shortcut 1</string>
+    <string name="static_shortcut_2">Static Shortcut 2</string>
+    <string name="existing_shortcuts">Existing shortcuts:</string>
+    <string name="title_activity_demo">DemoActivity</string>
+
+    <string name="static_shortcut">Static Shortcut</string>
+
+    <string name="dynamic_shortcut_id">Dynamic Shortcut %d</string>
+    <string name="create_dynamic_shortcut_button">create</string>
+    <string name="set_rand_button">set rank</string>
+    <string name="create_pinned_shortcut_button">create pinned shortcut</string>
+    <string name="remove_button">Remove Shortcut</string>
+    <string name="disable_pinned_shortcuts_error_message">This pinned shortcut no longer exists</string>
+</resources>

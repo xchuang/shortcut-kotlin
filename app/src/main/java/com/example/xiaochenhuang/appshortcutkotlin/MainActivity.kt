@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     @OnClick(R.id.remove_button)
-    fun removeShorcut() {
+    fun removeShortcut() {
         val shortcutIds = Collections.singletonList(shortcutManager.dynamicShortcuts[0].id)
         //disable pinned shortcuts, showing user a custom error message when they try to select the disabled shortcuts
         shortcutManager.disableShortcuts(shortcutIds, getString(R.string.disable_pinned_shortcuts_error_message))

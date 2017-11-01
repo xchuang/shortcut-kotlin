@@ -91,6 +91,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hasDynamicShortcuts(): Boolean {
-        return shortcutManager.dynamicShortcuts.isEmpty()
+        return !shortcutManager.dynamicShortcuts.isEmpty()
     }
 }

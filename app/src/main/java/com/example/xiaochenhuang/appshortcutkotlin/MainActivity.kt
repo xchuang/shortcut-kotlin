@@ -11,8 +11,7 @@ import android.os.Bundle
 import android.widget.EditText
 import butterknife.BindView
 import butterknife.ButterKnife
-import butterknife.OnClick
-import java.util.*
+import butterknife.OnClick import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -92,6 +91,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hasDynamicShortcuts(): Boolean {
-        return shortcutManager.dynamicShortcuts.size != 0
+        return shortcutManager.dynamicShortcuts.isEmpty()
     }
 }
